@@ -100,8 +100,8 @@
     </style>
     <div class="main-text">
         <h1 class="h1">еЗАВРШНИ ИСПИТ</h1>
-        <p class="p">У току је одржавање портала.</p>
-        <p class="p2">Молимо Вас, посетите портал касније</p>
+        <p id="p1" class="p">У току је одржавање портала.</p>
+        <p id="p2" class="p2">Молимо Вас, посетите портал касније</p>
     </div>
     <div class="bottom-footer">
         <div class="logo-item">
@@ -130,6 +130,10 @@ fetch("https://api.jsonbin.io/v3/b/6867d61d8a456b7966bb40c3?param1=value1&param2
 .then(data => {
   console.log("Data:", data);
   if (data.record.maintenance === false) {
+      const p1 = document.getElementById("p1");
+    const p2 = document.getElementById("p2");
+    if (p1) p1.style.display = "none";
+    if (p2) p2.textContent = "УЧИТАВАЊЕ ПОРТАЛА...";
     window.location.href = "https://group247.wixstudio.com/e-zavrsni-ispit/portal";
   }
 })
