@@ -117,4 +117,27 @@
 
 
 
-</body></html>
+</body>
+<script>
+fetch("https://api.jsonbin.io/v3/b/6867d61d8a456b7966bb40c3?param1=value1&param2=value2", {
+  method: "GET",
+  headers: {
+    "X-Master-Key": "$2a$10$vIplqDTxCAozvfjTFYhnQ.WBde312LOweYmiCRQ/6bXYicqVM3VLS",
+    "Content-Type": "application/json"
+  }
+})
+.then(response => response.json())
+.then(data => {
+  console.log("Data:", data);
+  if (data.record.maintenance === false) {
+    window.location.href = "https://group247.wixstudio.com/e-zavrsni-ispit/portal";
+  }
+})
+.catch(err => {
+  console.error("Fetch error:", err);
+});
+</script>
+
+
+
+</html>
